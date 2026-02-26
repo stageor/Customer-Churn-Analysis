@@ -218,30 +218,227 @@ Optional enhancements:
 
 ---
 
-## 10. Project Structure
+## 10. Project Structure (Detailed)
 
 ```
 Customer-Churn-Analysis/
 │
 ├── data/
-│   └── Telco-Customer-Churn.csv
+│   ├── raw/
+│   │   └── Telco-Customer-Churn.csv
+│   ├── processed/
+│   │   ├── train.csv
+│   │   ├── test.csv
+│   │   └── feature_matrix.parquet
+│   └── external/
 │
 ├── notebooks/
 │   ├── 01-eda.ipynb
 │   ├── 02-feature-engineering.ipynb
-│   └── 03-modeling.ipynb
+│   ├── 03-modeling-experiments.ipynb
+│   └── 04-threshold-optimization.ipynb
 │
 ├── src/
+│   ├── config/
+│   │   └── config.yaml
+│   │
 │   ├── data/
+│   │   ├── load_data.py
+│   │   ├── validate_data.py
+│   │   └── split_data.py
+│   │
 │   ├── features/
+│   │   ├── build_features.py
+│   │   ├── feature_selection.py
+│   │   └── encoding.py
+│   │
 │   ├── models/
 │   │   ├── train_model.py
-│   │   └── evaluate.py
+│   │   ├── tune_model.py
+│   │   ├── evaluate.py
+│   │   ├── threshold.py
+│   │   └── explain.py
+│   │
+│   ├── pipeline/
+│   │   └── churn_pipeline.py
+│   │
+│   ├── monitoring/
+│   │   ├── drift.py
+│   │   └── performance_tracking.py
+│   │
 │   └── utils/
+│       ├── logger.py
+│       ├── metrics.py
+│       └── helpers.py
+│
+├── models/
+│   ├── catboost_model.pkl
+│   ├── feature_importance.csv
+│   └── shap_values.npy
+│
+├── reports/
+│   ├── eda_report.html
+│   ├── model_comparison.csv
+│   └── business_impact_summary.md
 │
 ├── requirements.txt
-└── README.md
+├── README.md
+└── .gitignore
 ```
+
+---
+
+### Folder Responsibilities
+
+### `data/`
+
+Structured separation prevents contamination.
+
+- `raw/`  
+  Immutable source data. Never modified.
+
+- `processed/`  
+  Cleaned, transformed, split datasets. Reproducible via pipeline.
+
+- `external/`  
+  Optional enrichment datasets such as macro indicators or customer lifetime value tables.
+
+---
+
+### `notebooks/`
+
+Used only for experimentation and exploration.
+
+Each notebook has a clear purpose:
+- `01-eda.ipynb` → Distribution analysis, imbalance review, churn drivers  
+- `02-feature-engineering.ipynb` → Feature construction experiments  
+- `03-modeling-experiments.ipynb` → Model comparison and hyperparameter trials  
+- `04-threshold-optimization.ipynb` → Precision-recall tradeoff and business cost tuning  
+
+Production logic is not embedded here.
+
+---
+
+### `src/`
+
+Core production-grade code. All notebooks should eventually call functions from here.
+
+#### `config/`
+Central configuration file for:
+- Random seeds  
+- Feature lists  
+- Model hyperparameters  
+- Threshold selection  
+
+Prevents hardcoding.
+
+---
+
+#### `data/`
+Responsible for:
+- Loading datasets  
+- Data validation checks  
+- Stratified splitting  
+
+Ensures reproducibility.
+
+---
+
+#### `features/`
+Contains transformation logic:
+- Encoding categorical variables  
+- Creating interaction features  
+- Feature selection  
+- Aggregations  
+
+All transformations wrapped inside sklearn-compatible pipelines.
+
+---
+
+#### `models/`
+Handles full ML lifecycle.
+
+- `train_model.py` → Train chosen model  
+- `tune_model.py` → Optuna-based hyperparameter tuning  
+- `evaluate.py` → ROC-AUC, PR-AUC, confusion matrix  
+- `threshold.py` → Precision-recall threshold selection  
+- `explain.py` → SHAP interpretation  
+
+This separation improves testability.
+
+---
+
+#### `pipeline/`
+End-to-end orchestration script.
+
+`churn_pipeline.py` performs:
+1. Data loading  
+2. Feature engineering  
+3. Model training  
+4. Evaluation  
+5. Model saving  
+
+Used for production batch runs.
+
+---
+
+#### `monitoring/`
+Prepares system for real deployment.
+
+- `drift.py` → Detect feature distribution shift  
+- `performance_tracking.py` → Monitor recall, precision over time  
+
+Prevents silent model degradation.
+
+---
+
+#### `utils/`
+Shared utilities:
+- Logging configuration  
+- Custom metric functions  
+- Helper functions  
+
+Prevents duplication.
+
+---
+
+### `models/`
+
+Stores serialized artifacts:
+
+- Trained model file  
+- Feature importance export  
+- SHAP outputs  
+
+This folder is usually excluded from version control in real production.
+
+---
+
+### `reports/`
+
+Business-facing deliverables:
+
+- EDA visual summary  
+- Model comparison table  
+- Business impact documentation  
+
+Separates technical output from business communication.
+
+---
+
+## Why This Structure Matters
+
+This is no longer a notebook project.
+
+It demonstrates:
+
+- Separation of concerns  
+- Reproducibility  
+- Production thinking  
+- Monitoring readiness  
+- Business alignment  
+
+Most churn projects online are just notebooks. This structure signals engineering maturity.
 
 ---
 
