@@ -7,7 +7,7 @@
 
 End-to-end machine learning project to **understand, quantify, and customer churn** in telecom and other subscription-based businesses such as banking and SaaS.
 
-This project on predictive performance, imbalance handling, business cost , and decision threshold calibration for real retention campaigns.
+This project on predictive performance, imbalance handling, business cost , and decision threshold calibration for retention campaigns.
 
 ---
 
