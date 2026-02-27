@@ -17,7 +17,7 @@ Customer churn is one of the most expensive revenue leaks in subscription busine
 
 **Executive Problem**
 
-> “We are losing customers every month. We do not clearly know who will leave next, nor which segments are most vulnerable.”
+> “We are losing every month. We do not clearly know who will leave next, nor which segments are most vulnerable.”
 
 ### Objective
 
