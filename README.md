@@ -5,7 +5,7 @@
 ![EDA](https://img.shields.io/badge/📊-Exploratory%20Data%20Analysis-important?style=flat-square)
 ![Imbalanced Learning](https://img.shields.io/badge/🔄-Imbalanced%20Learning-ff69b4?style=flat-square)
 
-End-to-end machine learning project to **understand, quantify, and predict customer churn** in telecom and other subscription-based businesses such as banking and SaaS.
+End-to-end machine learning project to **understand, quantify, and customer churn** in telecom and other subscription-based businesses such as banking and SaaS.
 
 This project focuses on predictive performance, imbalance handling, business cost , and decision threshold calibration for real retention campaigns.
 
