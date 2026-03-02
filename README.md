@@ -249,8 +249,9 @@ Customer-Churn-Analysis/
 └── README.md
 ```
 
-All production logic is implemented in `src/`.  
-Notebooks are reserved for exploratory analysis.
+
+All production logic resides in `src/`.  
+Notebooks are used strictly for exploration.
 
 ---
 
@@ -266,6 +267,7 @@ source .venv/bin/activate
 pip install -r requirements.txt
 
 python src/models/train_model.py --model catboost --save
+
 ---
 
 ## 13. Future Extensions
