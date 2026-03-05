@@ -146,9 +146,9 @@ PR-AUC is prioritized due to class imbalance.
 
 ### Interpretation
 
-A marginal ROC difference is rarely actionable.
+A small difference in ROC performance is rarely actionable.
 
-A 10% improvement in recall under fixed campaign capacity directly changes retained revenue.
+However, a 10% improvement in recall under a fixed campaign capacity can directly increase retained revenue.
 
 For 1,500 churners per cycle:
 
