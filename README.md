@@ -69,7 +69,7 @@ data/Telco-Customer-Churn.csv
 **Target Variable**
 - Churn (Yes / No)
 
-Class distribution is moderately imbalanced at roughly 27% churn.
+The class distribution is moderately imbalanced, with churn accounting for roughly 27% of the observations.
 
 ---
 
