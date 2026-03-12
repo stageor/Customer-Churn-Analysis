@@ -19,7 +19,7 @@ Retention is structurally cheaper than acquisition. However, many organizations 
 
 **Executive Question**
 
-Customers are most likely to churn in next 30 days, and within fixed campaign budget, many of them can realistically be retained?
+Customers are most likely to churn in next 30 days, & within fixed campaign budget, many of them can realistically be retained?
 
 ### Project Objective
 
