@@ -7,7 +7,7 @@
 
 A machine learning project built to predict customer churn telecom, SaaS, subscription-driven businesses.
 
-Project is not built to maximize cosmetic metrics. It is optimized for constrained recall, campaign economics, & deployable system design.
+Project is not built to maximize cosmetic metrics. It optimized for constrained recall, campaign economics, & deployable system design.
 
 ---
 
