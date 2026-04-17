@@ -5,7 +5,7 @@
 ![EDA](https://img.shields.io/badge/EDA-Exploratory%20Data%20Analysis-important?style=flat-square)
 ![Imbalanced Learning](https://img.shields.io/badge/Imbalanced-Learning-ff69b4?style=flat-square)
 
-A machine learning project built to predict customer churn telecom, SaaS, subscription-driven businesses.
+Built a machine learning model to predict customer churn across telecom, SaaS, and subscription-based businesses.
 
 Project is built to maximize cosmetic metrics. It optimized for constrained recall, campaign economics, & deployable system design.
 
