@@ -7,7 +7,7 @@
 
 Built a machine learning model to predict customer churn across telecom, SaaS, and subscription-based businesses.
 
-project focuses on business impact rather than cosmetic metrics, optimizing for constrained recall, campaign economic, and deployable system design.
+Project prioritizes tangible business impact over vanity metrics by focusing on constrained recall, campaign ROI, and the development of deployable, production-ready systems.
 
 ---
 
