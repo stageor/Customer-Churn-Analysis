@@ -1,10 +1,5 @@
 # Customer Churn Prediction and Revenue Impact Modeling
 
-![Python](https://img.shields.io/badge/Python-3.9+-blue?style=flat-square&logo=python&logoColor=white)
-![scikit-learn](https://img.shields.io/badge/scikit--learn-1.4+-orange?style=flat-square)
-![EDA](https://img.shields.io/badge/EDA-Exploratory%20Data%20Analysis-important?style=flat-square)
-![Imbalanced Learning](https://img.shields.io/badge/Imbalanced-Learning-ff69b4?style=flat-square)
-
 Built a machine learning model to predict customer churn across telecom, SaaS, and subscription-based businesses.
 
 Project prioritizes tangible business impact over vanity metrics by focusing on constrained recall, campaign ROI, and the development of deployable, production-ready systems.
